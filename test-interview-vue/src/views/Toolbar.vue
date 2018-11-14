@@ -16,6 +16,9 @@
   }
 </script>
 <style scoped>
+  .theme--light.v-toolbar{
+    background-color: #ffffff;
+  }
   .v-toolbar__title{
     margin-left: 50px !important;
     border-left: 1px solid black;
