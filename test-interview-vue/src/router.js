@@ -27,5 +27,9 @@ export default new Router({
         }
       ]
     },
+    {
+      path: '*',
+      redirect: '/asset-health/torque-profile'
+    }
   ]
 })

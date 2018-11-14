@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex xs3>
           <v-card>
-            <v-toolbar color="primary" class="white--text">
+            <v-toolbar color="#4a90e2" class="white--text">
               <v-btn icon class="hidden-xs-only">
                 <v-icon class="white--text">arrow_back</v-icon>
               </v-btn>
@@ -18,11 +18,11 @@
             <v-card-title primary-title>
               <div>
                 <div>Terminal name</div>
-                <h5 class="mb-0">WEST</h5>
+                <h3 class="mb-0">WEST</h3>
                 <div>Country code</div>
-                <h5 class="mb-0">NLD</h5>
+                <h3 class="mb-0">NLD</h3>
                 <div>Address</div>
-                <h5 class="mb-0">Rotterdam<i class="fas fa-map-marker-alt"></i></h5>
+                <h3 class="mb-0">Rotterdam<i class="fas fa-map-marker-alt"></i></h3>
               </div>
             </v-card-title>
           </v-card>
@@ -33,8 +33,8 @@
               <v-toolbar-items>
                 <v-btn flat><a href="#">DASHBOARD</a></v-btn>
 
-                  <v-btn flat v-bind:class="{ active: activeButton }" v-on:click="activeButton = !activeButton">
-                    <router-link to="/asset-health">
+                  <v-btn flat v-bind:class="{ active: isActive }" v-on:click="isActive = !isActive">
+                    <router-link to="/asset-health" class="tab">
                     ASSET HEALTH
                     </router-link>
                   </v-btn>
@@ -58,9 +58,11 @@
 
 export default {
   name: 'home',
-  // data: function () {
-  //   return activeButton = false;
-  // }
+  data() {
+    return {
+      isActive: false
+    }
+  }
 }
 </script>
 <style>
@@ -76,13 +78,17 @@ export default {
   .secondBar .v-toolbar{
     box-shadow: none;
   }
-  .activeButton{
-    color: blue;
+  .active{
+    color: #4a90e2 !important;
+    border-bottom: 2px solid #4a90e2;
   }
   .application a{
     display: flex;
     text-decoration: none;
     color: inherit;
+  }
+  .home .v-card__title{
+    text-align: left;
   }
 
 </style>
@@ -97,9 +103,7 @@ export default {
     padding-right: 0;
     padding-left: 0;
   }
-  .activeButton{
-    color: blue;
-  }
+
   .content{
     padding: 20px;
   }
