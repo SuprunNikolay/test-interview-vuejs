@@ -32,17 +32,23 @@
             <v-toolbar>
               <v-toolbar-items>
                 <v-btn flat>DASHBOARD</v-btn>
-                <v-btn flat v-bind:class="{ active: activeButton }"
-                       v-on:click="activeButton = !activeButton">
-                  ASSET HEALTH</v-btn>
-                <v-btn flat>WORK ORDERS</v-btn>
+
+                  <v-btn flat v-bind:class="{ active: activeButton }" v-on:click="activeButton = !activeButton">
+                    <router-link to="/asset-health">
+                    ASSET HEALTH
+                    </router-link>
+                  </v-btn>
+
+                  <v-btn flat>WORK ORDERS</v-btn>
               </v-toolbar-items>
             </v-toolbar>
+          </div>
+          <div class="content">
+            <router-view/>
           </div>
         </v-flex>
       </v-layout>
     </v-container>
-
 
   </div>
 </template>
@@ -73,6 +79,11 @@ export default {
   .activeButton{
     color: blue;
   }
+  .application a{
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+  }
 
 </style>
 <style scoped>
@@ -88,5 +99,8 @@ export default {
   }
   .activeButton{
     color: blue;
+  }
+  .content{
+    padding: 20px;
   }
 </style>
