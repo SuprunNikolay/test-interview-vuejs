@@ -31,7 +31,7 @@
           <div class="secondBar">
             <v-toolbar>
               <v-toolbar-items>
-                <v-btn flat>DASHBOARD</v-btn>
+                <v-btn flat><a href="#">DASHBOARD</a></v-btn>
 
                   <v-btn flat v-bind:class="{ active: activeButton }" v-on:click="activeButton = !activeButton">
                     <router-link to="/asset-health">
@@ -39,7 +39,7 @@
                     </router-link>
                   </v-btn>
 
-                  <v-btn flat>WORK ORDERS</v-btn>
+                  <v-btn flat><a href="#">WORK ORDERS</a></v-btn>
               </v-toolbar-items>
             </v-toolbar>
           </div>

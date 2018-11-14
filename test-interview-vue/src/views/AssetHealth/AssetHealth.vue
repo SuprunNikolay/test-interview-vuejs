@@ -17,21 +17,21 @@
           <v-btn flat>Events</v-btn>
           <v-btn flat>Position</v-btn>
           <v-btn flat>Travel time</v-btn>
-          <v-btn flat>Torque profile</v-btn>
+          <v-btn flat>
+            <router-link to="/asset-health/torque-profile">
+              Torque profile
+            </router-link>
+          </v-btn>
           <v-btn flat>Torque profile</v-btn>
           <v-btn flat>Alarm analytics</v-btn>
 
 
-          <!--<v-btn flat v-bind:class="{ active: activeButton }" v-on:click="activeButton = !activeButton">-->
-            <!--<router-link to="/asset-health">-->
-              <!--ASSET HEALTH-->
-            <!--</router-link>-->
-          <!--</v-btn>-->
-
         </v-toolbar-items>
       </v-toolbar>
     </div>
-
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 
 </template>
